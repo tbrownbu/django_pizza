@@ -1,0 +1,18 @@
+{% entends 'pizzas/base.html' %}
+
+{% block page_header %}
+<h2>Pizza Time!</h2>
+<br>
+{% endblock page_header %}
+
+{% block page_header %}
+<ul>
+    {% for p in pizzas %}
+    <li>
+        <h3>
+            <a href="{% url 'pizzas:pizza' p.id %}">{{ p }}</a>
+        </h3>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

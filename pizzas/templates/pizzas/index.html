@@ -1,0 +1,19 @@
+{% extends "pizzas/base.html" %}
+
+{% block page_header %}
+    <div class="jumbotron">
+        <h1 class="display-3">Peter Parker's Pizza</h1>
+            <p class="lead">Pizza Time!
+            </p>
+
+
+            <a class="btn btn-lg btn-outline-primary" href="{% url 'pizzas:pizza' %}"
+            role="button">Order Now &raquo;</a>
+    </div>
+    <style>
+        body {
+            background-image: img('pizza time.png') ;
+        }
+    </style>
+
+    {% endblock page_header %}
