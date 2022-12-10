@@ -1,46 +1,46 @@
-% load bootstrap 4 %
+{% load bootstrap4 %}
+
 <!doctype html>
+
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="veiwport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+        <title>Peter Parker's Pizza</title>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="veiwport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
-    <title>Peter Parker's Pizza</title>
-    {% bootstrap_css %}
-    {% bootstrap_javascript jquery='full' %}
-</head>
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery='full' %}
 
-<body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
-        <a class="navbar-brand" href="{% url 'pizzas:index'%}">
-            Peter Parker's Pizza</a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarCollapse" aria-controls="navbarCollapse"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    </head>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'pizzas:pizzas' %}">Pizzas</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <body>
 
-    <main role="main" class="container">
-        <div class="pb-2 mb-2 border-bottom">
-            {% block page_header %}{% endblock page_header %}
-        </div>
+        <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
+            <a class="navbar-brand" href="{% url 'pizzas:index'%}">Peter Parker's Pizza</a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span></button>
 
-        <div>
-            {% block content %}{% endblock content %}
-        </div>
-    </main>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'pizzas:pizzas' %}">Pizzas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-</body>
+        <main role="main" class="container">
+            <div class="pb-2 mb-2 border-bottom">
+                {% block page_header %}{% endblock page_header %}
+            </div>
+
+            <div>
+                {% block content %}{% endblock content %}
+            </div>
+        </main>
+
+    </body>
 
 </html>
 

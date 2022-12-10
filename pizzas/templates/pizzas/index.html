@@ -2,18 +2,19 @@
 
 {% block page_header %}
     <div class="jumbotron">
-        <h1 class="display-3">Peter Parker's Pizza</h1>
-            <p class="lead">Pizza Time!
-            </p>
+        <h1 class="display-2">Peter Parker's Pizza</h1>
+            <p class="lead">Pizza Time!</p>
 
-
-            <a class="btn btn-lg btn-outline-primary" href="{% url 'pizzas:pizza' %}"
-            role="button">Order Now &raquo;</a>
+            <a class="btn btn-lg btn-outline-primary" href="{% url 'pizzas:pizzas' %}"
+            role="button">View Our Pizzas&raquo;</a>
     </div>
+{% endblock page_header %}
+{% block content %}
     <style>
         body {
-            background-image: img('pizza time.png') ;
+            background-image: url('https://i.redd.it/3rhdmuv1ynw11.jpg');
+            background-size: cover;
         }
     </style>
 
-    {% endblock page_header %}
+{% endblock content %}

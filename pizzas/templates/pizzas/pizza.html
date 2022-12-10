@@ -1,0 +1,39 @@
+{% extends 'pizzas/base.html' %}
+
+{% block page_header %}
+<h2>{{ pizza }}</h2>
+{% endblock page_header %}
+
+{% block content %}
+<p>
+    <img src="{{ pizza.image.url }}">
+</p>
+<ul>
+    {% for t in toppings %}
+        <li>
+            {{ t.topping_name }}
+        </li>
+    
+    {% empty %}
+    <p> There are no toppings on this pizza.</p>
+    {% endfor %}
+
+</ul>
+
+
+<p><a href="{% url 'pizzas:comment' pizza.id %}">Add Comment</a></p>
+
+<h4><p>Comments:</p></h4>
+<ul>
+    {% for c in comments %}
+        
+        <li>{{ c.date_added|date:'M d, Y H:i'}}</li>
+    
+        <li>{{ c.comment_text|linebreaks }}</li>
+
+    {% empty %}
+    <p>There are no comments yet. Tell us what you think by adding a comment!</p>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

@@ -1,18 +1,34 @@
-{% entends 'pizzas/base.html' %}
+{% extends 'pizzas/base.html' %}
 
 {% block page_header %}
-<h2>Pizza Time!</h2>
-<br>
+<h2>The Goods!</h2>
 {% endblock page_header %}
 
-{% block page_header %}
+{% block content %}
+
 <ul>
-    {% for p in pizzas %}
+    {% for p in all_pizzas %}
+
     <li>
         <h3>
             <a href="{% url 'pizzas:pizza' p.id %}">{{ p }}</a>
         </h3>
     </li>
+    {% empty %}
+    <li>
+        <h3>It's not pizza time :/
+    </li>
+    </h3>
     {% endfor %}
 </ul>
+
+<style>
+    body {
+        background-image: url('https://cdna.artstation.com/p/assets/images/images/042/103/406/large/sam-grainger-pizzatime2.jpg?1633577667');
+        background-repeat: no-repeat;
+        background-size: 75%;
+    }
+</style>
+
+
 {% endblock content %}
