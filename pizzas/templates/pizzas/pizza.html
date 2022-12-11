@@ -5,9 +5,7 @@
 {% endblock page_header %}
 
 {% block content %}
-<p>
-    <img src="{{ pizza.image.url }}">
-</p>
+<h5>Toppings:</h5>
 <ul>
     {% for t in toppings %}
         <li>
@@ -19,11 +17,15 @@
     {% endfor %}
 
 </ul>
+<p>
+    <img src="{{ pizza.image.url }}">
+</p>
 
+<h4><p>Comments:</p></h4>
 
 <p><a href="{% url 'pizzas:comment' pizza.id %}">Add Comment</a></p>
 
-<h4><p>Comments:</p></h4>
+
 <ul>
     {% for c in comments %}
         
