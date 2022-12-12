@@ -1,8 +1,6 @@
 from django.db import models
 from email.mime import image
 
-from Pizzeria.settings import MEDIA_URL
-
 # Create your models here.
 class Pizza(models.Model):
     pizza_name = models.CharField(max_length=200)

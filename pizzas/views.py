@@ -1,7 +1,7 @@
 from email.mime import image 
 from django.shortcuts import render, redirect
 
-from .forms import PizzaForm, ToppingForm, CommentForm
+from .forms import CommentForm
 from .models import Pizza, Topping, Comment
 
 # Create your views here.
